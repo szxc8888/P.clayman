@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kabatakun : MonoBehaviour
 {
-    private float speed = 100f;
+    private float speed = 50.0f;
     private Transform enemy;
 
     private void Start()

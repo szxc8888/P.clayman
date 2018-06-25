@@ -6,7 +6,7 @@ public class GameGenerator : MonoBehaviour {
 
     public GameObject kabata;
     public GameObject[] enemy;
-    private float timespan = 5.0f;
+    private float timespan = 10.0f;
     private float time = 0.0f;
 
 	// Use this for initialization
@@ -24,13 +24,9 @@ public class GameGenerator : MonoBehaviour {
             GameObject go = Instantiate(kabata) as GameObject;
             int pos = Random.Range(0, 3);
             go.transform.position = enemy[pos].transform.position;
+            go.transform.rotation = enemy[pos].transform.rotation;
             time = 0;
             Debug.Log("Create Success");
         }
-    }
-
-    void OnCollisionEnter(Collision col)
-    {
-        
     }
 }
