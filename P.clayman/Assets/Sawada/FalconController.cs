@@ -78,17 +78,10 @@ public class FalconController : MonoBehaviour {
 	void Update () {
         float h = Input.GetAxis("Horizontal");
 
-        if(h * h > Mathf.Epsilon)
-        { 
+        if (h * h > Mathf.Epsilon)
+        {
             transform.position = coordinate.Rotate(h * rotateSpeed * Time.deltaTime, transform.position.y).toCarsian + pivot.position;
         }
-
-        float v = Input.GetAxis("Vertical");
-        if(v * v > Mathf.Epsilon)
-        {
-            transform.position = coordinate.TranslateRadius(v * Time.deltaTime * scrollSpeed).toCarsian + pivot.position;
-        }
-
         transform.LookAt(pivot.position);
-	}
+    }
 }
