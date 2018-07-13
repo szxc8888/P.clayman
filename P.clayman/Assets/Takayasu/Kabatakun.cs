@@ -11,6 +11,7 @@ public class Kabatakun : MonoBehaviour
     {
         // 城の位置取得
         enemy = GameObject.FindWithTag("Player").transform;
+        GetComponent<ParticleSystem>().Stop();
     }
 
     private void Update()
@@ -26,7 +27,10 @@ public class Kabatakun : MonoBehaviour
     // 衝突
     void OnCollisionEnter(Collision col)
     {
+        GetComponent<ParticleSystem>().Play();
         // 消える
         Destroy(gameObject);
+
+       
     }
 }
