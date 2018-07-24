@@ -82,6 +82,7 @@ public class FalconController : MonoBehaviour {
         {
             transform.position = coordinate.Rotate(h * rotateSpeed * Time.deltaTime, transform.position.y).toCarsian + pivot.position;
         }
+
         transform.LookAt(pivot.position);
     }
 }
